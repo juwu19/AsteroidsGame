@@ -1,18 +1,26 @@
 Spaceship qAndr;
 Star [] sZ = new Star[200];
+Asteroid [] chic = new Asteroid[50];
 public void setup() 
 {
 	size(1000,1000);
 	qAndr = new Spaceship();
-	for(int i = 0; i < 200; i ++){
+	for(int i = 0; i < sZ.length; i++){
 		sZ[i] = new Star();
+	}
+	for(int i = 0; i < chic.length; i++){
+		chic[i] = new Asteroid();
 	}
 }
 public void draw() 
 {
 	background(0);
-	for(int i = 0; i < 200; i ++){
+	for(int i = 0; i < sZ.length; i++){
 		sZ[i].show();
+	}
+	for(int i = 0; i < chic.length; i++){
+		chic[i].show();
+		chic[i].move();
 	}
 	qAndr.show();
 	qAndr.move();
